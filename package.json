@@ -1,13 +1,14 @@
 {
   "name": "n8n-nodes-yaml",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node to parse and stringify YAML",
   "keywords": [
     "n8n-community-node-package",
     "yaml",
     "n8n",
     "stringifier",
-    "parser"
+    "parser",
+    "n8n-node-athon"
   ],
   "license": "MIT",
   "homepage": "https://github.com/pemontto/n8n-nodes-yaml",
