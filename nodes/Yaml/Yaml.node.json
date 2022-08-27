@@ -1,0 +1,14 @@
+{
+	"node": "n8n-nodes-yaml.yaml",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication", "Marketing & Content", "Utility"],
+	"resources": {
+		"credentialDocumentation": [],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/pemontto/n8n-nodes-yaml"
+			}
+		]
+	}
+}

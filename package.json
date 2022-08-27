@@ -1,0 +1,59 @@
+{
+  "name": "n8n-nodes-yaml",
+  "version": "0.1.0",
+  "description": "Node to parse and stringify YAML",
+  "keywords": [
+    "n8n-community-node-package",
+    "yaml",
+    "n8n",
+    "stringifier",
+    "parser"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/pemontto/n8n-nodes-yaml",
+  "author": {
+    "name": "pemontto",
+    "email": "pemontto@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pemontto/n8n-nodes-yaml.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes --write",
+    "lint": "tslint -p tsconfig.json -c tslint.json && eslint nodes package.json",
+    "lintfix": "tslint --fix -p tsconfig.json -c tslint.json && eslint nodes package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "credentials": ["dist/nodes/Yaml/Yaml.node.js"],
+    "nodes": [
+      "dist/nodes/Yaml/Yaml.node.js"
+    ],
+    "n8nNodesApiVersion": 1
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/lodash": "^4.14.182",
+    "@types/request-promise-native": "~1.0.15",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint-plugin-n8n-nodes-base": "^1.5.4",
+    "gulp": "^4.0.2",
+    "n8n-core": "^0.130.0",
+    "n8n-workflow": "^0.112.0",
+    "prettier": "^2.7.1",
+    "tslint": "^6.1.2",
+    "typescript": "~4.6.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "yaml": "^2.1.1"
+  }
+}
+
