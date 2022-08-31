@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-yaml",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Node to parse and stringify YAML",
   "keywords": [
     "n8n-community-node-package",
@@ -33,7 +33,7 @@
     "dist"
   ],
   "n8n": {
-    "credentials": ["dist/nodes/Yaml/Yaml.node.js"],
+    "credentials": [],
     "nodes": [
       "dist/nodes/Yaml/Yaml.node.js"
     ],
