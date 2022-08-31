@@ -22,7 +22,6 @@ export class Yaml implements INodeType {
 		description: 'Parse YAML',
 		defaults: {
 			name: 'YAML',
-			color: '#f45e43',
 		},
 		inputs: ['main'],
 		outputs: ['main'],
