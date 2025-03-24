@@ -2,7 +2,7 @@
 
 # n8n-nodes-yaml
 
-<img src="./nodes/Yaml/yaml.svg" width=120 />
+<img src="https://raw.githubusercontent.com/pemontto/n8n-nodes-yaml/main/nodes/Yaml/yaml.svg?token=GHSAT0AAAAAAC7IB4NCPYDAN3XY5IZICCK4Z7A6G4A" width=120 />
 
 This is an n8n community node for node for parsing and stringifying YAML.
 
