@@ -1,15 +1,14 @@
-import { parse, stringify } from 'yaml';
-
-import { IExecuteFunctions } from 'n8n-core';
-
 import {
+	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
+	NodeConnectionType,
 	NodeOperationError,
 } from 'n8n-workflow';
 
 import { set } from 'lodash';
+import { parse, stringify } from 'yaml';
 
 export class Yaml implements INodeType {
 	description: INodeTypeDescription = {
@@ -23,9 +22,8 @@ export class Yaml implements INodeType {
 		defaults: {
 			name: 'YAML',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
-		credentials: [],
+		inputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionType.Main],
 		properties: [
 			{
 				displayName: 'Operation',
@@ -98,7 +96,7 @@ export class Yaml implements INodeType {
 			item = items[itemIndex];
 
 			const newItem: INodeExecutionData = {
-				json: JSON.parse(JSON.stringify(item.json)),
+				json: {...item.json},
 				pairedItem: item.pairedItem,
 			};
 
