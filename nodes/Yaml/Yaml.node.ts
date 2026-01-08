@@ -1,10 +1,10 @@
 import {
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeType,
-	INodeTypeDescription,
-	NodeConnectionType,
+	NodeConnectionTypes,
 	NodeOperationError,
+	type IExecuteFunctions,
+	type INodeExecutionData,
+	type INodeType,
+	type INodeTypeDescription,
 } from 'n8n-workflow';
 
 import { set } from 'lodash';
@@ -14,16 +14,17 @@ export class Yaml implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'YAML',
 		name: 'yaml',
-		icon: 'file:yaml.svg',
+		icon: 'file:../../icons/yaml.svg',
 		group: ['transform'],
 		version: 1,
+		usableAsTool: true,
 		subtitle: '={{$parameter["name"]}}',
 		description: 'Parse YAML',
 		defaults: {
 			name: 'YAML',
 		},
-		inputs: [NodeConnectionType.Main],
-		outputs: [NodeConnectionType.Main],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		properties: [
 			{
 				displayName: 'Operation',

@@ -70,16 +70,6 @@ n8n v0.187+
 {
   "nodes": [
     {
-      "parameters": {},
-      "name": "Start",
-      "type": "n8n-nodes-base.start",
-      "typeVersion": 1,
-      "position": [
-        240,
-        300
-      ]
-    },
-    {
       "parameters": {
         "values": {
           "string": [
@@ -99,9 +89,10 @@ n8n v0.187+
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        460,
-        300
-      ]
+        -380,
+        0
+      ],
+      "id": "eac6fbf4-2af0-4af0-ad47-01799108c579"
     },
     {
       "parameters": {
@@ -109,7 +100,7 @@ n8n v0.187+
           "string": [
             {
               "name": "JSON_DATA",
-              "value": "={{ JSON.parse($json[\"json\"]) }}"
+              "value": "={{ $json.json.parseJson() }}"
             }
           ]
         },
@@ -119,9 +110,10 @@ n8n v0.187+
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        720,
-        380
-      ]
+        -120,
+        80
+      ],
+      "id": "a1bae44d-23f2-47c8-83c1-08e290f3c989"
     },
     {
       "parameters": {
@@ -131,9 +123,10 @@ n8n v0.187+
       "type": "n8n-nodes-base.merge",
       "typeVersion": 1,
       "position": [
-        960,
-        300
-      ]
+        120,
+        0
+      ],
+      "id": "50b9891f-7b84-40c4-affb-1f2865a9697a"
     },
     {
       "parameters": {
@@ -144,9 +137,10 @@ n8n v0.187+
       "type": "n8n-nodes-yaml.yaml",
       "typeVersion": 1,
       "position": [
-        720,
-        220
-      ]
+        -120,
+        -80
+      ],
+      "id": "b360ff9f-6442-4eae-a5c8-86da8efa6999"
     },
     {
       "parameters": {
@@ -158,23 +152,24 @@ n8n v0.187+
       "type": "n8n-nodes-yaml.yaml",
       "typeVersion": 1,
       "position": [
-        1160,
-        300
-      ]
+        320,
+        0
+      ],
+      "id": "0749fdde-808c-4fec-a0bf-59545712c308"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        0
+      ],
+      "id": "cf2a6ef7-30fa-43f2-8f6e-035d87aac70e",
+      "name": "When clicking ‘Test workflow’"
     }
   ],
   "connections": {
-    "Start": {
-      "main": [
-        [
-          {
-            "node": "Set",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Set": {
       "main": [
         [
@@ -218,6 +213,22 @@ n8n v0.187+
         [
           {
             "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to YAML": {
+      "main": [
+        []
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Set",
             "type": "main",
             "index": 0
           }

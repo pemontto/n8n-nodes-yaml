@@ -12,54 +12,32 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/pemontto/n8n-nodes-yaml",
-  "author": {
-    "name": "pemontto",
-    "email": "pemontto@gmail.com"
-  },
+  "author": { "name": "pemontto", "email": "pemontto@gmail.com" },
   "repository": {
     "type": "git",
     "url": "https://github.com/pemontto/n8n-nodes-yaml.git"
   },
-  "engines": {
-    "node": ">=18.10",
-    "pnpm": ">=9.1"
-  },
-  "packageManager": "pnpm@9.1.4",
-  "main": "index.js",
+  "engines": { "node": ">=18.10" },
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "tsc && gulp build:icons",
-    "dev": "tsc --watch",
-    "format": "prettier nodes --write",
-    "lint": "eslint nodes package.json",
-    "lintfix": "eslint nodes package.json --fix",
-    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes package.json"
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "n8n": {
     "n8nNodesApiVersion": 1,
+    "strict": false,
     "credentials": [],
-    "nodes": [
-      "dist/nodes/Yaml/Yaml.node.js"
-    ]
+    "nodes": ["dist/nodes/Yaml/Yaml.node.js"]
   },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "yaml": "^2.7.0"
-  },
+  "dependencies": { "lodash": "^4.17.21", "yaml": "^2.8.2" },
   "devDependencies": {
-    "@types/lodash": "^4.17.16",
-    "@typescript-eslint/parser": "~8.27",
-    "eslint-plugin-n8n-nodes-base": "^1.16.3",
-    "eslint": "^8.56.0",
-    "gulp": "^5.0.0",
-    "n8n-workflow": "*",
-    "prettier": "^3.5.3",
-    "typescript": "~5.8.2"
+    "@n8n/node-cli": "*",
+    "@types/lodash": "^4.17.21",
+    "typescript": "^5.9.3"
   },
-  "peerDependencies": {
-    "n8n-workflow": "*"
-  }
+  "peerDependencies": { "n8n-workflow": "*" }
 }
