@@ -1,6 +1,6 @@
-# n8n-nodes-yaml
-
 <img src="https://raw.githubusercontent.com/pemontto/n8n-nodes-yaml/main/icons/yaml.svg" width="120" alt="YAML Logo" />
+
+# n8n-nodes-yaml
 
 This is an n8n community node for node for parsing and stringifying YAML.
 
